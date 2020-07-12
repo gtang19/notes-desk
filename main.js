@@ -6,9 +6,10 @@ document.addEventListener("keyup", (e) => {
     removeEditor(editorActive);
   }
 });
-document.addEventListener("click", (e) => {
-  let x = Math.round((e.pageX / window.innerWidth) * 100);
-  let y = (e.pageY / window.innerHeight) * 100;
+
+notes.addEventListener("click", (e) => {
+  let x = (e.pageX / notes.offsetWidth) * 100;
+  let y = (e.pageY / notes.offsetHeight) * 100;
   if (!editorActive) {
     createEditor(x, y, 12, 12, {
       red: Math.round(150 + Math.random() * 75),
@@ -21,8 +22,8 @@ document.addEventListener("click", (e) => {
 const createNote = (x, y, width, height, t, c, color) => {
   let note = document.createElement("div");
   note.classList.add("note");
-  note.style.left = `calc(${x}vw - ${width / 2}em)`;
-  note.style.top = `calc(${y}vh - ${height / 2}em)`;
+  note.style.left = `calc(${x}% - ${width / 2}em)`;
+  note.style.top = `calc(${y}% - ${height / 2}em)`;
   note.style.width = `${width}em`;
   note.style.height = `${height}em`;
 
@@ -45,8 +46,8 @@ const createEditor = (x, y, width, height, color) => {
   let editor = document.createElement("div");
   editorActive = editor;
   editor.classList.add("editor");
-  editor.style.left = `calc(${x}vw - ${width / 2}em)`;
-  editor.style.top = `calc(${y}vh - ${height / 2}em)`;
+  editor.style.left = `calc(${x}% - ${width / 2}em)`;
+  editor.style.top = `calc(${y}% - ${height / 2}em)`;
   editor.style.width = `${width}em`;
   editor.style.height = `${height}em`;
   let i = document.createElement("input");
@@ -57,9 +58,8 @@ const createEditor = (x, y, width, height, color) => {
     color.blue + 20
   })`;
   let t = document.createElement("textarea");
-  t.cols = 30;
-  t.rows = 10;
-  t.maxLength = 42;
+
+  t.maxLength = 420;
   t.spellcheck = false;
   t.style.background = `rgb(${color.red},${color.green}, ${color.blue})`;
   i.addEventListener("keyup", (e) => {

@@ -5,7 +5,7 @@
 
 
 #notes {
-    width: 100vw;
+    width: max(100vw, 1600px);
     height: 100vh;
     position: absolute;
     font-family: 'Permanent Marker', cursive;
@@ -63,6 +63,7 @@
     font-size: 1.2em;
     padding: .75em;
     resize: none;
+    flex: 1;
 }
 
 .confirm,
