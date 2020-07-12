@@ -1,0 +1,2 @@
+/get-notes /.netlify/functions/get-notes
+/send-note /.netlify/functions/send-note

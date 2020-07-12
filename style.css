@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+#notes {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    font-family: 'Indie Flower', cursive;
+    background: url("./background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.note {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.note h1 {
+    font-weight: lighter;
+    /* background: black;
+    color: white; */
+    min-height: 1.5em;
+}
+
+.note p {
+    padding: .75em;
+    font-size: 1.2em;
+    flex: 1;
+}
+
+.editor {
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.editor input,
+.editor textarea {
+    outline: none;
+    border: none;
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+
+}
+
+.editor input {
+    /* background: yellow; */
+    font-size: 2em;
+
+}
+
+.editor textarea {
+    /* background: lightyellow; */
+    font-size: 1.2em;
+    padding: .75em;
+    resize: none;
+}
+
+.confirm,
+.cancel {
+    font-weight: bolder;
+    outline: none;
+    position: absolute;
+    border-radius: 50%;
+    border: none;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.42);
+    cursor: pointer;
+}
+
+.confirm:hover,
+.cancel:hover {
+    box-shadow: 4px 4px 8px 0px rgba(0, 0, 0, 0.42);
+    transform: translate(1px, 1px)
+}
+
+.confirm:active,
+.cancel:active {
+    transform: translate(0px, 0px);
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.42);
+}
+
+.confirm {
+    font-size: 1.5em;
+    width: 3rem;
+    height: 3rem;
+    background: #3dff7e;
+    color: white;
+    bottom: -.5rem;
+    right: -.5rem;
+}
+
+.cancel {
+    width: 1.5rem;
+    height: 1.5rem;
+    background: #ff3636;
+    color: white;
+    top: -.5rem;
+    right: -.25rem;
+}
