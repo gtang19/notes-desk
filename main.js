@@ -1,4 +1,5 @@
 const notes = document.getElementById("notes");
+const wrapper = document.getElementById("wrapper");
 let editorActive = false;
 
 document.addEventListener("keyup", (e) => {
@@ -8,8 +9,8 @@ document.addEventListener("keyup", (e) => {
 });
 
 notes.addEventListener("click", (e) => {
-  let x = (e.pageX / notes.offsetWidth) * 100;
-  let y = (e.pageY / notes.offsetHeight) * 100;
+  let x = ((e.pageX + wrapper.scrollLeft) / notes.offsetWidth) * 100;
+  let y = ((e.pageY + wrapper.scrollTop) / notes.offsetHeight) * 100;
   if (!editorActive) {
     createEditor(x, y, 12, 12, {
       red: Math.round(150 + Math.random() * 75),
