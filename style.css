@@ -45,6 +45,7 @@ body {
     padding: .75em;
     font-size: 1.2em;
     flex: 1;
+    word-wrap: break-word;
 }
 
 .editor {

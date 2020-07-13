@@ -59,8 +59,6 @@ const createEditor = (x, y, width, height, color) => {
     color.blue + 20
   })`;
   let t = document.createElement("textarea");
-  t.rows = 4;
-  t.cols = 10;
   t.maxLength = 42;
   t.spellcheck = false;
   t.style.background = `rgb(${color.red},${color.green}, ${color.blue})`;
