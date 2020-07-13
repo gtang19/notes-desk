@@ -60,7 +60,7 @@ const createEditor = (x, y, width, height, color) => {
   })`;
   let t = document.createElement("textarea");
 
-  t.maxLength = 420;
+  t.maxLength = 42;
   t.spellcheck = false;
   t.style.background = `rgb(${color.red},${color.green}, ${color.blue})`;
   i.addEventListener("keyup", (e) => {
